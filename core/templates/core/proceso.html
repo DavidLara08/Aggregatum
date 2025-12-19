@@ -1,0 +1,82 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Nuestro Proceso | Aggregatum{% endblock title %}
+
+{% block content %}
+<section class="process-section">
+    <div class="container">
+        <h1 class="process-title">Nuestro Proceso</h1>
+
+        <div class="process-model-wrapper">
+            <div class="process-y-axis">
+                Desarrollo del proyecto
+            </div>
+
+            <div class="process-phases-container">
+                <div class="process-phase phase-1">
+                    <h3 class="phase-header">1. SOLICITUD DE DESARROLLO</h3>
+                    <div class="phase-details">
+                        <ul>
+                            <li>Definición funcional</li>
+                            <li>Análisis de requerimientos</li>
+                            <li>Estimación</li>
+                            <li>Asignación de Recursos</li>
+                        </ul>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar client-bar"></div>
+                        <div class="progress-bar aggregatum-bar bar-active"></div>
+                    </div>
+                    <div class="phase-owner">Cliente</div>
+                </div>
+
+                <div class="process-phase phase-2">
+                    <h3 class="phase-header">2. CONSTRUCCIÓN</h3>
+                    <div class="phase-details">
+                        <ul>
+                            <li>Diseño y desarrollo</li>
+                            <li>Pruebas de unidad</li>
+                            <li>Documentación</li>
+                        </ul>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar aggregatum-bar bar-active"></div>
+                    </div>
+                    <div class="phase-owner">Aggregatum</div>
+                </div>
+
+                <div class="process-phase phase-3">
+                    <h3 class="phase-header">3. CONTROL DE CALIDAD</h3>
+                    <div class="phase-details">
+                        <ul>
+                            <li>Pruebas institucionales</li>
+                            <li>Mejoras Prácticas</li>
+                            <li>Apego a estándares</li>
+                        </ul>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar aggregatum-bar bar-active"></div>
+                    </div>
+                    <div class="phase-owner">Aggregatum</div>
+                </div>
+
+                <div class="process-phase phase-4">
+                    <h3 class="phase-header">4. LIBERACIÓN</h3>
+                    <div class="phase-details">
+                        <ul>
+                            <li>Pruebas integradas</li>
+                            <li>Aprobación del desarrollo</li>
+                            <li>Soporte en producción</li>
+                        </ul>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar client-bar bar-inactive"></div>
+                    </div>
+                    <div class="phase-owner">Cliente</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

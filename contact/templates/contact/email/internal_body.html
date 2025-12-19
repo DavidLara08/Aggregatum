@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ subject }}</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;">
+
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        
+        <!-- Header (Título) -->
+        <tr>
+            <td style="background-color: #094c66; padding: 20px; text-align: center;">
+                <h1 style="color: #ffffff; margin: 0; font-size: 24px;">Nuevo Mensaje de Contacto</h1>
+            </td>
+        </tr>
+
+        <!-- Body Content -->
+        <tr>
+            <td style="padding: 30px;">
+                <p style="font-size: 16px; color: #333;">Estimado equipo,</p>
+                <p style="font-size: 16px; color: #333;">Han recibido un nuevo mensaje a través del formulario de contacto:</p>
+
+                <table width="100%" cellpadding="10" cellspacing="0" border="0" style="margin-top: 20px; border: 1px solid #ddd; border-radius: 5px;">
+                    <tr>
+                        <td width="30%" style="font-weight: bold; background-color: #f9f9f9; color: #0d2d3a;">Nombre:</td>
+                        <td width="70%" style="background-color: #ffffff; color: #333;">{{ nombre }}</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold; background-color: #f9f9f9; color: #0d2d3a;">Email:</td>
+                        <td style="background-color: #ffffff; color: #333;"><a href="mailto:{{ email }}" style="color: #094c66;">{{ email }}</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold; background-color: #f9f9f9; color: #0d2d3a;">Asunto:</td>
+                        <td style="background-color: #ffffff; color: #333;">{{ asunto }}</td>
+                    </tr>
+                </table>
+
+                <p style="font-size: 16px; color: #333; margin-top: 20px; font-weight: bold;">Mensaje:</p>
+                <div style="border-left: 3px solid #094c66; padding-left: 15px; background-color: #fcfcfc; padding: 15px; border-radius: 5px; color: #555; line-height: 1.6;">
+                    {{ mensaje|linebreaks }}
+                </div>
+            </td>
+        </tr>
+
+        <!-- Logo/Firma (Añadido) -->
+        <tr>
+            <td style="padding: 20px 30px 10px 30px; text-align: center;">
+                <hr style="border: none; border-top: 1px solid #eee; margin: 15px 0;">
+                <img 
+                    src="static/img/logo.png" 
+                    alt="Logo de AGGREGATUM" 
+                    width="180" 
+                    style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
+                >
+            </td>
+        </tr>
+        
+        <!-- Footer -->
+        <tr>
+            <td style="padding: 10px 20px 20px 20px; text-align: center; font-size: 12px; color: #999;">
+                Este correo fue enviado automáticamente por la aplicación de contacto de AGGREGATUM.
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

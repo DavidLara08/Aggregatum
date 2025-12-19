@@ -1,0 +1,38 @@
+/* --- Estilos de Botones (Componente rehusable) --- */
+/* Deben ir en static/css/components/_buttons.css */
+
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 65px;
+    /* px-8 py-3 */
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.15s ease-in-out;
+}
+
+.btn-primary {
+    background-color: #0ba221;
+    color: var(--color-lightest);
+    border: 1px solid transparent;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: #498852;
+    /* Verde ligeramente más oscuro */
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-lightest);
+    border: 1px solid var(--color-lightest);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-lightest);
+    color: var(--color-primary);
+}

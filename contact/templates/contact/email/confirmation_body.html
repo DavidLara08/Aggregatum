@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ subject }}</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;">
+
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        
+        <!-- Header (Logo/Título) -->
+        <tr>
+            <td style="background-color: #094c66; padding: 20px; text-align: center;">
+                <h1 style="color: #ffffff; margin: 0; font-size: 24px;">AGGREGATUM</h1>
+            </td>
+        </tr>
+
+        <!-- Body Content -->
+        <tr>
+            <td style="padding: 30px;">
+                <p style="font-size: 16px; color: #333;">Hola {{ nombre }},</p>
+
+                <p style="font-size: 16px; color: #333; line-height: 1.6;">
+                    Hemos recibido tu consulta con el asunto **"{{ asunto }}"**.
+                    Queremos confirmarte que tu mensaje fue recibido y estamos revisándolo.
+                </p>
+
+                <p style="font-size: 16px; color: #333; font-weight: bold;">Te responderemos lo antes posible, usualmente dentro de 24 horas hábiles.</p>
+                
+                <hr style="border: none; border-top: 1px solid #eee; margin: 25px 0;">
+
+                <p style="font-size: 14px; color: #555;">Aquí tienes una copia de tu mensaje para referencia:</p>
+                <div style="border-left: 3px solid #094c66; padding-left: 15px; background-color: #fcfcfc; padding: 15px; border-radius: 5px; color: #555; line-height: 1.6;">
+                    {{ mensaje|linebreaks }}
+                </div>
+            </td>
+        </tr>
+
+        <!-- Logo/Firma (Añadido) -->
+        <tr>
+            <td style="padding: 20px 30px 10px 30px; text-align: center;">
+                <p style="margin-bottom: 10px; font-size: 14px; color: #333;">Atentamente, El equipo de AGGREGATUM.</p>
+                <img 
+                    src="static/img/logo.png" 
+                    alt="Logo de AGGREGATUM" 
+                    width="180" 
+                    style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
+                >
+            </td>
+        </tr>
+        
+        <!-- Footer -->
+        <tr>
+            <td style="padding: 20px; text-align: center; font-size: 12px; color: #999; border-top: 1px solid #eee;">
+                Gracias por contactar a AGGREGATUM. | <a href="http://www.aggregatum.com/Page/Sitio_Aggregatum/inicio.php" style="color: #094c66;">Visita nuestro sitio web</a>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

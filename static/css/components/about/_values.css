@@ -1,0 +1,107 @@
+/* ===================================== */
+/* ESTRUCTURA GENERAL DE VALORES */
+/* ===================================== */
+
+.values-section {
+    padding: 80px;
+    background-color: #ffffff;
+}
+
+.values-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+.values-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #273043;
+    margin-bottom: 10px;
+}
+
+.values-subtitle {
+    font-size: 1rem;
+    color: #5a667b;
+}
+
+/* ===================================== */
+/* REJILLA DE VALORES (Grid) */
+/* ===================================== */
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columnas iguales */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+.value-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px 20px;
+    text-align: center;
+    /* Borde de la tarjeta (similar a la historia) */
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: solid 1px #273043;
+}
+
+.value-item:hover {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    color: #273043;
+    /* Icono oscuro */
+    margin-bottom: 0px;
+    display: block;
+    /* Para centrar */
+    width: 100%;
+}
+
+.value-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #273043;
+    margin-bottom: 3px;
+}
+
+.value-description {
+    font-size: 0.95rem;
+    color: #5a667b;
+    line-height: 1.5;
+}
+
+/* ===================================== */
+/* ADAPTACIÓN (Media Queries) */
+/* ===================================== */
+
+@media (max-width: 1024px) {
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columnas en tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+        /* 1 columna en móvil */
+    }
+
+    .value-item {
+        padding: 25px;
+        text-align: left;
+    }
+
+    .value-icon {
+        width: fit-content;
+        margin-bottom: 10px;
+    }
+}

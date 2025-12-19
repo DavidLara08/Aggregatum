@@ -1,0 +1,114 @@
+/* static/css/components/software/_hero.css */
+
+.fabrica-hero-section {
+    background: #094c66;
+    background: linear-gradient(90deg, rgba(9, 76, 102, 1) 19%, rgba(80, 115, 95, 1) 89%);
+    color: var(--color-lightest);
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.fabrica-hero-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.fabrica-hero-text {
+    flex: 1;
+    /* Base Móvil: 100% de ancho */
+    width: 100%;
+    max-width: none;
+    /* Cambiado de 'center' a 'left' para mejor lectura en móvil sin imagen */
+    text-align: left;
+}
+
+/* Títulos y subtítulos */
+.fabrica-hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-lg);
+}
+
+.fabrica-hero-subtitle,
+.fabrica-hero-description {
+    max-width: 700px;
+    /* Asegura la alineación a la izquierda en móvil */
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.fabrica-hero-subtitle {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: var(--spacing-md);
+}
+
+.fabrica-hero-description {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2.5rem;
+}
+
+/* **AJUSTE CLAVE:** Ocultar la imagen por defecto (móvil) */
+.fabrica-hero-image {
+    display: none;
+}
+
+.fabrica-hero-image img {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Reajustar el botón si usas el botón verde de CTA */
+.fabrica-hero-text .btn-cta-primary {
+    /* Asegurar que el botón sea verde (accent) */
+    background-color: var(--color-accent);
+    color: var(--color-lightest);
+    border: 1px solid var(--color-accent);
+}
+
+.fabrica-hero-text .btn-cta-primary:hover {
+    background-color: #4a675d;
+    /* Tono más oscuro de Muted Green */
+}
+
+
+/* Media Query para Desktop (diseño de dos columnas y mostrar imagen) */
+@media (min-width: 992px) {
+    .fabrica-hero-wrapper {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+        gap: 80px;
+    }
+
+    .fabrica-hero-section {
+        padding: 100px 0;
+    }
+
+    .fabrica-hero-text {
+        /* Restablecer las propiedades específicas de desktop */
+        max-width: 50%;
+        text-align: left;
+    }
+
+    /* **AJUSTE CLAVE:** Mostrar la imagen en desktop y darle su ancho */
+    .fabrica-hero-image {
+        display: block;
+        /* Muestra la imagen */
+        flex: 1;
+        max-width: 45%;
+        /* Establece el ancho para el layout de 2 columnas */
+    }
+
+    .fabrica-hero-subtitle,
+    .fabrica-hero-description {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

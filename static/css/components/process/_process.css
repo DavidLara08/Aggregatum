@@ -1,0 +1,248 @@
+/* static/css/components/_process.css */
+
+.process-section {
+    background-color: var(--color-light-bg);
+    /* Gris claro */
+    padding: 60px 0 100px;
+}
+
+.process-title {
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo para la imagen superior (opcional, pero ayuda a replicar el diseño) */
+/* static/css/components/_process.css */
+
+/* ... (otros estilos de .process-section y .process-title) ... */
+
+.process-hero-image {
+    /* Ya no es un background-image, así que quitamos background-size */
+    /* background: url("{% static 'img/code.jpg' %}") no-repeat center center; */
+
+    background-color: #f0f0f0;
+    /* Un fondo si la imagen no carga o para relleno */
+    min-height: 250px;
+    /* Altura mínima del contenedor */
+    max-width: 500px;
+    /* Opcional: limita el ancho máximo del contenedor de la imagen */
+    margin: 0 auto 40px;
+    /* Centra el contenedor y añade margen inferior */
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+
+    /* Importante para contener la imagen */
+    overflow: hidden;
+    /* Asegura que la imagen no se desborde si es muy grande */
+    position: relative;
+    /* Necesario si quieres superponer texto o usar posicionamiento absoluto dentro */
+
+    /* Para centrar la imagen dentro si esta no ocupa todo el espacio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.process-hero-image img {
+    width: 100%;
+    /* La imagen ocupa el 100% del ancho del contenedor */
+    height: 100%;
+    /* La imagen ocupa el 100% de la altura del contenedor */
+    object-fit: cover;
+    /* CLAVE: Mantiene la proporción de la imagen, recortando si es necesario para llenar el espacio */
+    border-radius: 10px;
+    /* Hereda el border-radius del contenedor si la imagen lo llena */
+    display: block;
+    /* Elimina espacio extra que algunos navegadores añaden a las imágenes */
+}
+
+/* ... (resto de tus estilos para .process-model-wrapper, etc.) ... */
+
+/* --- Contenedor del Modelo --- */
+.process-model-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--color-lightest);
+    /* Fondo blanco del diagrama */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Eje Y: 'Desarrollo del proyecto' */
+.process-y-axis {
+    writing-mode: vertical-rl;
+    /* Gira el texto 90 grados */
+    transform: rotate(180deg);
+    padding: 20px 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    background-color: #f0f0f0;
+    /* Fondo gris claro en el borde */
+    border-right: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+/* Contenedor de las 4 Fases */
+.process-phases-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columnas iguales */
+    width: 100%;
+}
+
+/* Estilo General de Cada Fase */
+.process-phase {
+    position: relative;
+    padding: 20px 15px;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px;
+    /* Altura mínima para el diagrama */
+    cursor: default;
+    /* Mantiene el puntero normal */
+}
+
+.process-phase:last-child {
+    border-right: none;
+}
+
+.phase-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 15px;
+    background-color: var(--color-primary);
+    color: var(--color-lightest);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0;
+    /* Quita el margen por defecto de los h3 */
+    text-transform: uppercase;
+    text-align: left;
+}
+
+/* Detalles (Lista de Puntos) */
+.phase-details {
+    margin-top: 40px;
+    font-size: 0.85rem;
+    color: var(--color-text);
+}
+
+.phase-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.phase-details li {
+    margin-bottom: 5px;
+}
+
+/* Dueño de la Fase (Cliente / Aggregatum) */
+.phase-owner {
+    text-align: center;
+    padding-top: 10px;
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: 0.85rem;
+}
+
+/* --- BARRAS DE PROGRESO Y ANIMACIÓN --- */
+.progress-bar-container {
+    height: 150px;
+    /* Altura de la sección de las barras */
+    width: 100%;
+    margin: 20px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    /* Para que la barra verde crezca desde abajo */
+    align-items: center;
+}
+
+.progress-bar {
+    width: 90%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    background-color: #f0f0f0;
+    /* Fondo base de la barra (gris claro) */
+    transition: width 0.3s ease, height 0.7s ease-out;
+    /* Transición para la animación */
+}
+
+/* Estilos Específicos de Color */
+.client-bar {
+    background-color: #ccc;
+    /* Gris oscuro para la barra del cliente */
+    z-index: 5;
+    height: 10%;
+    /* Las barras del cliente son pequeñas */
+}
+
+.aggregatum-bar {
+    background-color: #7ED321;
+    /* Verde brillante (color del diagrama original) */
+    z-index: 10;
+    height: 0%;
+    /* CLAVE: Empieza en 0% */
+}
+
+.aggregatum-bar.bar-active {
+    height: 0%;
+    /* Asegura que la barra verde esté lista para animar */
+}
+
+/* Estado de HOVER: Anima la barra verde hasta su altura final */
+.process-phase:hover .aggregatum-bar.bar-active {
+    /* La altura se establece con base en data-progress y se escala a 100% de la altura del contenedor (150px) */
+    /* Usaremos CSS custom properties o JavaScript si necesitamos valores dinámicos. 
+       Para simplicidad de CSS puro, usaremos la altura hardcodeada en el :hover de cada fase: */
+}
+
+/* Animación en HOVER (Se necesita JS para leer data-progress, pero lo simulamos en CSS) */
+/* Fase 1: Aggregatum 50% */
+.phase-1:hover .aggregatum-bar.bar-active {
+    height: 25%;
+}
+
+/* Fase 2: Aggregatum 100% */
+.phase-2:hover .aggregatum-bar.bar-active {
+    height: 50%;
+}
+
+/* Fase 3: Aggregatum 85% */
+.phase-3:hover .aggregatum-bar.bar-active {
+    height: 75%;
+}
+
+.phase-4:hover .aggregatum-bar.bar-active {
+    height: 100%;
+}
+
+
+/* Ocultar barra gris donde la barra Aggregatum es 100% (Fase 2) */
+.phase-2 .client-bar {
+    display: none;
+}
+
+/* La Fase 4 no tiene barra de Aggregatum activa, solo la del Cliente */
+.phase-4 .client-bar {
+    height: 50%;
+    /* Simulamos la altura del cliente en Liberación */
+    background-color: #ccc;
+}

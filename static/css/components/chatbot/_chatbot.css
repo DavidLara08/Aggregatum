@@ -1,0 +1,303 @@
+/* static/css/components/chatbot/_chatbot.css - CÓDIGO ACTUALIZADO */
+
+/* Variables rápidas */
+:root {
+    --agg-blue: #094c66;
+    --agg-green: #5b8a6b;
+    --panel-bg: #ffffff;
+    --muted: #6b7a80;
+    --bubble-user: var(--agg-blue);
+    --bubble-bot: #e6f3f7;
+}
+
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    /* Añadido: Contenedor que aloja tanto el panel como el botón */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* Para alinear el panel y el botón a la derecha */
+}
+
+/* Botón flotante (ícono) */
+.chatbot-toggle {
+    /* Mantener en la posición original dentro del contenedor fijo */
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(90deg, var(--agg-blue) 20%, var(--agg-green) 100%);
+    color: #fff;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    box-shadow: 0 8px 20px rgba(13, 45, 58, 0.15);
+    cursor: pointer;
+    border: none;
+    transition: transform .16s ease, box-shadow .16s ease;
+    /* Asegurar que el botón esté visible y no detrás del panel */
+    z-index: 10000;
+}
+
+.chatbot-toggle:hover {
+    transform: translateY(-3px) scale(1.03);
+}
+
+/* Panel principal */
+.chatbot-panel {
+    /* Nueva estructura: el panel se coloca justo encima del toggle */
+    width: 360px;
+    max-width: calc(100vw - 40px);
+    height: 480px;
+    max-height: 80vh;
+    display: none;
+    /* toggle via JS */
+    flex-direction: column;
+    background: var(--panel-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 18px 50px rgba(10, 20, 25, 0.18);
+    /* Se elimina margin-bottom para que se pegue al toggle (reemplazado por el orden del flex) */
+    /* Modificado: Coloca el panel encima del botón */
+    position: relative;
+    order: -1;
+    /* Mueve el panel arriba del botón en el contenedor flex */
+}
+
+/* Header */
+.chatbot-header {
+    padding: 14px 16px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg, var(--agg-blue) 20%, var(--agg-green) 100%);
+    color: #fff;
+}
+
+.chatbot-header .title {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.chatbot-header .title i {
+    font-size: 20px;
+}
+
+/* ESTILO MODIFICADO: Botón de cierre (X) */
+.chatbot-header .chatbot-close {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    /* Aumentado el tamaño */
+    cursor: pointer;
+    line-height: 1;
+    /* Asegura que la X no se desplace */
+    opacity: 0.85;
+    transition: opacity .15s ease;
+}
+
+.chatbot-header .chatbot-close:hover {
+    /* Selector ajustado */
+    opacity: 1;
+}
+
+/* Mensajes area */
+.chatbot-messages {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    background: linear-gradient(180deg, #f8fbfc 0%, #f4f7f8 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Burbujas */
+.msg {
+    max-width: 78%;
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-size: 0.95rem;
+    line-height: 1.3;
+    box-shadow: 0 2px 8px rgba(20, 30, 35, 0.03);
+}
+
+.msg.bot {
+    background: var(--bubble-bot);
+    color: #064257;
+    align-self: flex-start;
+    border-top-left-radius: 6px;
+}
+
+.msg.user {
+    background: var(--bubble-user);
+    color: #fff;
+    align-self: flex-end;
+    border-top-right-radius: 6px;
+}
+
+/* Saludo destacado */
+.msg.welcome {
+    font-weight: 600;
+}
+
+/* Suggestions (chips debajo de una respuesta) */
+.suggestions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+}
+
+.suggestion {
+    background: #fff;
+    border: 1px solid #e6eef1;
+    color: #094c66;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s;
+}
+
+.suggestion:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(9, 76, 102, 0.08);
+}
+
+/* Typing indicator (3 puntos) */
+/* El estilo es correcto. La visibilidad y la duración de 2s deben manejarse con JS. */
+.typing {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.typing .dot {
+    width: 7px;
+    height: 7px;
+    background: #31bce2;
+    border-radius: 50%;
+    opacity: 0.35;
+    transform: translateY(0);
+    animation: blink 1.2s infinite ease-in-out;
+}
+
+.typing .dot:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.typing .dot:nth-child(3) {
+    animation-delay: 0.30s;
+}
+
+@keyframes blink {
+    0% {
+        transform: translateY(0);
+        opacity: 0.25;
+    }
+
+    50% {
+        transform: translateY(-4px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 0.25;
+    }
+}
+
+/* Input area */
+.chatbot-input-area {
+    display: flex;
+    gap: 8px;
+    padding: 12px;
+    border-top: 1px solid #e8eef0;
+    background: #fff;
+
+}
+
+.chatbot-input {
+    /* CLAVE: Esto le dice al input que tome todo el espacio extra disponible */
+    flex: 1;
+    border: 1px solid #e6eef1;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.chatbot-input:focus {
+    outline: none;
+    border-color: var(--agg-blue);
+    box-shadow: 0 6px 20px rgba(9, 76, 102, 0.06);
+}
+
+/* ESTILO MODIFICADO: Botón de envío */
+.chatbot-send {
+    background: linear-gradient(90deg, var(--agg-blue) 20%, var(--agg-green) 100%);
+    color: #fff;
+    border: none;
+    width: 40px;
+    /* Tamaño fijo */
+    height: 40px;
+    /* Tamaño fijo para que sea cuadrado */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    /* Centrar el icono */
+    align-items: center;
+    justify-content: center;
+    transition: opacity .15s ease, transform .1s ease;
+    /* Agregado transform para efecto al hacer clic */
+}
+
+.chatbot-send:hover {
+    opacity: 0.9;
+}
+
+.chatbot-send:active {
+    transform: scale(0.98);
+}
+
+.chatbot-button {
+    padding-left: 6rem;
+}
+
+/* Footer small note */
+.chatbot-footer-note {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: center;
+    padding: 8px 12px 12px;
+}
+
+/* Responsive: panel full width on small screens */
+@media (max-width: 480px) {
+    .chatbot-panel {
+        /* Se usa `margin-bottom` para asegurar que haya espacio para el toggle */
+        margin-bottom: 12px;
+        width: auto;
+        height: 72vh;
+
+    }
+
+    #chatbot-container {
+        right: 12px;
+        left: 12px;
+        /* Aseguramos que el contenedor se estire y use el ancho completo */
+        width: auto;
+        align-items: stretch;
+        /* Estira el panel a todo el ancho disponible */
+    }
+}

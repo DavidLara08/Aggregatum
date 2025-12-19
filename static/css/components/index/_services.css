@@ -1,0 +1,104 @@
+/* static/css/components/_services.css */
+
+.services-section {
+    padding: 80px 0;
+    background-color: var(--color-lightest);
+}
+
+/* --- Encabezado --- */
+.services-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.services-title {
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-darkest);
+    margin-bottom: 0.5rem;
+}
+
+.services-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+    /* Centrado */
+}
+
+/* --- Grid de Servicios (Móvil) --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Móvil: una columna */
+    gap: 20px;
+    padding: 0 var(--spacing-md);
+}
+
+/* --- Tarjeta de Servicio (Card) --- */
+.service-card {
+    display: block;
+    text-decoration: none;
+    background-color: var(--color-lightest);
+    border: 1px solid var(--color-subtle);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* --- EFECTOS HOVER --- */
+.service-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-accent);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Contenedor del Icono --- */
+.service-icon-container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-primary);
+    color: var(--color-lightest);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* --- EFECTO HOVER en el Icono --- */
+.service-card:hover .service-icon-container {
+    transform: scale(1.1);
+}
+
+.service-icon-container svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* --- Texto de la Tarjeta --- */
+.service-card h3 {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: var(--color-secondary);
+}
+
+
+/* ************************************ */
+/*   MEDIA QUERIES (DESKTOP)           */
+/* ************************************ */
+
+/* Media Query para Desktop (4 columnas) */
+@media (min-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

@@ -1,0 +1,54 @@
+/* static/css/styles.css */
+
+/* 1. Base y Variables */
+@import url('base/_variables.css');
+@import url('base/_reset.css');
+
+/* 2. Layouts y Estructuras */
+@import url('layout/_layout.css');
+@import url('layout/_navbar.css');
+@import url('layout/_footer.css');
+
+/* 3. Componentes y Secciones */
+
+/*COMPONENTES INDEX */
+@import url('components/index/_buttons.css');
+@import url('components/index/_hero.css');
+@import url('components/index/_services.css');
+@import url('components/index/_excellence.css');
+@import url('components/index/_cta.css');
+
+
+/* COMPONENTES FABRICA DE SOFTWARE */
+@import url('components/software/_hero.css');
+@import url('components/software/_specialization.css');
+@import url('components/software/_techfocus.css');
+@import url('components/software/_stats.css');
+@import url('components/software/_platforms.css');
+
+
+/* COMPONENTES FABRICA DE PRODUCTS */
+@import url('components/products/_hero.css');
+@import url('components/products/_section.css');
+
+
+
+/* COMPONENTES FABRICA DE NUESTRO PROCESO */
+@import url('components/process/_process.css');
+
+/* COMPONENTES DE CONTACTO */
+@import url('components/contact/_form.css');
+@import url('components/contact/_hero.css');
+@import url('components/contact/_location.css');
+
+
+/* COMPONENTES DE ACERCA DE */
+@import url('components/about/_hero.css');
+@import url('components/about/_history.css');
+@import url('components/about/_mission_vision.css');
+@import url('components/about/_values.css');
+@import url('components/about/_expertise.css');
+
+/* COMPONENTES DE CHATBOT */
+@import url('components/chatbot/_chatbot.css');
+/* ... Aquí irían más componentes (_cards.css, _forms.css, etc.) */

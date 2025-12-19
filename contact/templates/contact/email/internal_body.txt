@@ -1,0 +1,11 @@
+ASUNTO: {{ asunto }}
+
+NUEVO MENSAJE DE CONTACTO (AGGREGATUM)
+-------------------------------------
+Nombre: {{ nombre }}
+Correo: {{ email }}
+
+Mensaje:
+{{ mensaje }}
+-------------------------------------
+Favor de responder a la brevedad.

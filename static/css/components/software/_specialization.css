@@ -1,0 +1,81 @@
+/* static/css/components/software/_specialization.css */
+
+.specialization-section {
+    background-color: var(--color-light-bg);
+    /* Fondo gris claro */
+    padding: 30px 0;
+    text-align: center;
+}
+
+.specialization-section .section-title {
+    /* Usa la definición de H2 */
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.specialization-section .section-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text);
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.specialization-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .specialization-grid {
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 columnas en desktop */
+    }
+
+    .specialization-section {
+        padding: 60px 0;
+    }
+}
+
+.specialization-card {
+    background-color: var(--color-lightest);
+    /* Fondo blanco de la tarjeta */
+    padding: 25px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent;
+    /* Borde inicial invisible */
+}
+
+.specialization-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-accent);
+    /* Borde de color al hacer hover */
+}
+
+.card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: var(--color-primary);
+    /* Fondo del ícono (Midnight Blue) */
+    color: var(--color-lightest);
+    /* Color del ícono (Blanco) */
+    border-radius: 8px;
+    margin: 0 auto 15px;
+    font-size: 1.8rem;
+}
+
+.card-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-primary);
+}

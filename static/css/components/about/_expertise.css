@@ -1,0 +1,97 @@
+/* static/css/components/_expertise.css */
+
+.expertise-section {
+    padding: 60px 0;
+    background-color: var(--color-subtle);
+}
+
+.expertise-content {
+    display: flex;
+    flex-direction: column;
+    /* Móvil: columna */
+    gap: 40px;
+    align-items: center;
+    /* Centrar ítems en móvil */
+}
+
+/* --- Lado de la Imagen --- */
+.expertise-media {
+    width: 100%;
+    /* Ocupa todo el ancho en móvil */
+}
+
+.expertise-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Lado del Texto y Características --- */
+.expertise-text {
+    width: 100%;
+    /* Ocupa todo el ancho en móvil */
+}
+
+/* --- Títulos y Listas --- */
+.expertise-title {
+    font-size: 2rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.expertise-subtitle {
+    font-size: 1rem;
+    color: var(--color-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+    font-size: 1rem;
+    color: var(--color-darkest);
+}
+
+.feature-list svg {
+    color: var(--color-accent);
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+
+/* ************************************ */
+/* 💻 MEDIA QUERIES (DESKTOP)           */
+/* ************************************ */
+
+@media (min-width: 1024px) {
+    .expertise-content {
+        /* Habilitar las dos columnas */
+        flex-direction: row;
+        justify-content: space-between;
+        /* Aseguramos que los ítems estén alineados en la parte superior */
+        align-items: flex-start;
+    }
+
+    .expertise-media {
+        /* Orden: Imagen a la izquierda */
+        order: 1;
+        width: 45%;
+    }
+
+    .expertise-text {
+        /* Orden: Texto a la derecha */
+        order: 2;
+        width: 45%;
+    }
+}

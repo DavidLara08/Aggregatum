@@ -1,0 +1,30 @@
+/* static/css/components/contact/_hero.css */
+
+.contact-hero-section {
+    /* Usamos el mismo degradado de las secciones oscuras */
+    background: #094c66;
+    background: linear-gradient(90deg, rgba(9, 76, 102, 1) 19%, rgba(80, 115, 95, 1) 89%);
+    color: var(--color-lightest);
+    padding: 50px 0;
+    text-align: center;
+}
+
+.contact-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-hero-title {
+    /* Hereda estilos de H1 si están en globals.css o usa un tamaño grande */
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-hero-subtitle {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    /* Texto más suave */
+}

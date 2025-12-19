@@ -1,0 +1,187 @@
+/* ------------------------------------------- */
+/* CONTENEDOR GENERAL DEL FORMULARIO */
+/* ------------------------------------------- */
+
+
+
+.contact-form-section {
+    width: 100%;
+    max-width: 900px;
+    /* 🔹 Limita ancho total */
+    margin: 0 auto;
+    /* 🔹 Centra en la página */
+    padding: 60px 40px;
+    background-color: var(--color-subtle);
+    /* 🔹 Fondo tipo card */
+
+    border: 1px solid #5d5c6c;
+    /* 🔹 Borde suave */
+    border-radius: 14px;
+    /* 🔹 Esquinas redondeadas */
+    box-shadow: 0 6px 20px rgba(35, 25, 25, 0.09);
+    /* 🔹 Sombra más profesional */
+}
+
+/* TITULOS */
+.form-title {
+    font-size: 2.2rem;
+    color: #0d2d3a;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.form-subtitle {
+    font-size: 1.05rem;
+    color: #6c757d;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* ------------------------------------------- */
+/* FORMULARIO EN UNA COLUMNA */
+/* ------------------------------------------- */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    /* 🔹 Todo en una sola columna */
+    gap: 25px;
+    /* Esta es tu separación principal */
+}
+
+/* GRUPOS DE INPUTS */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* LABELS */
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #343a40;
+    font-size: 0.95rem;
+}
+
+/* INPUTS Y TEXTAREA */
+.form-group input,
+.form-group textarea {
+    padding: 14px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.25s, box-shadow 0.25s;
+    background-color: #f9fafb;
+    /* 🔹 Fondo sutil para distinguir inputs */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #094c66;
+    outline: none;
+    box-shadow: 0 0 6px rgba(9, 76, 102, 0.25);
+}
+
+/* ------------------------------------------- */
+/* BOTÓN CENTRADO */
+/* ------------------------------------------- */
+
+.submit-button {
+    padding: 16px 32px;
+    background: linear-gradient(90deg, rgba(9, 76, 102, 1) 19%, rgba(80, 115, 95, 1) 89%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.15rem;
+    font-weight: 700;
+    width: 100%;
+    max-width: 320px;
+    align-self: center;
+    /* 🔹 Centra el botón */
+    transition: transform 0.15s ease, opacity 0.2s;
+}
+
+.submit-button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+
+.submit-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    /* Espacio entre texto e icono */
+}
+
+.send-icon {
+    font-size: 1.25rem;
+    transition: transform 0.3s ease;
+}
+
+.submit-button:hover .send-icon {
+    transform: translateX(4px);
+}
+
+/* ------------------------------------------- */
+/* RESPONSIVE */
+/* ------------------------------------------- */
+
+@media (max-width: 600px) {
+    .contact-form-section {
+        padding: 40px 20px;
+    }
+}
+
+/* ------------------------------------------- */
+/* AJUSTES PARA ERRORES DE DJANGO (errorlist) */
+/* ------------------------------------------- */
+
+/* Estilos para la lista de errores que genera Django */
+.form-group ul.errorlist {
+    /* **CRUCIAL**: Elimina el margen por defecto del navegador para UL */
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    /* El margen superior de 5px es lo único que separa el error del input */
+}
+
+/* Estilos para cada item de la lista (li) */
+.form-group ul.errorlist li {
+    color: #dc3545;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Opcional pero recomendado: Resaltar el input con error */
+/* Django añade la clase 'error' o 'is-invalid' al campo padre/input. 
+   Usaremos el selector de atributo para el input: [aria-invalid="true"] 
+   que Django a menudo añade cuando un campo es inválido. */
+.form-group input[aria-invalid="true"],
+.form-group textarea[aria-invalid="true"] {
+    border-color: #dc3545;
+}
+
+/* ------------------------------------------- */
+/* ESTILOS PERSONALIZADOS PARA SWEETALERT2 */
+/* ------------------------------------------- */
+
+/* Estilo para el botón de confirmación */
+.ag-swal-button {
+    /* Usar tu gradiente */
+    background: linear-gradient(90deg, rgba(9, 76, 102, 1) 19%, rgba(80, 115, 95, 1) 89%) !important;
+    color: white !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 10px rgba(9, 76, 102, 0.2);
+    /* Se usa !important para asegurar que sobreescriba los estilos por defecto de la librería */
+}
+
+/* Opcional: Estilo para la tarjeta del modal */
+.ag-swal-popup {
+    border-radius: 14px !important;
+    /* Usa un fondo sutil si lo deseas */
+    /* background-color: #f9fafb !important; */
+}

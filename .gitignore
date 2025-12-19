@@ -1,0 +1,14 @@
+# .gitignore
+
+# Ignorar base de datos local
+db.sqlite3
+
+# Ignorar variables de entorno (¡CRUCIAL!)
+.env
+venv/
+# Ignorar cachés y compilaciones de Python
+__pycache__/
+*.pyc
+
+# Estáticos recolectados
+staticfiles/

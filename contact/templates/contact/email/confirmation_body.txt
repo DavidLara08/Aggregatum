@@ -1,0 +1,12 @@
+CONFIRMACIÓN: Mensaje Recibido en AGGREGATUM
+
+Hola {{ nombre }},
+
+Hemos recibido tu mensaje con el asunto "{{ asunto }}".
+Te responderemos lo antes posible.
+
+Detalles de tu mensaje:
+{{ mensaje }}
+
+Gracias por contactarnos.
+El equipo de AGGREGATUM

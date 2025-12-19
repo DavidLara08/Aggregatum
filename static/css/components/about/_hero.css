@@ -1,0 +1,184 @@
+/* ===================================== */
+/* ESTILOS GLOBALES / CONTENEDOR PRINCIPAL */
+/* ===================================== */
+
+.about-hero {
+    /* Fondo oscuro con patrón de puntos/cruz (si es posible replicarlo) */
+    background-color: #273043;
+    /* Un azul oscuro similar al diseño */
+    background-image: radial-gradient(#3c465a 1px, transparent 1px);
+    background-size: 40px 40px;
+
+    /* Layout principal: 2 columnas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 5%;
+    /* Padding superior/inferior y horizontal */
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.container-text {
+    flex: 1;
+    /* Ocupa el espacio restante */
+    max-width: 600px;
+    color: #ffffff;
+    padding-right: 40px;
+    /* Espacio entre el texto y la imagen */
+}
+
+.container-image {
+    flex: 1;
+    /* Ocupa el espacio de la imagen */
+    max-width: 700px;
+}
+
+
+/* ===================================== */
+/* TEXTOS Y TÍTULOS */
+/* ===================================== */
+
+.experience-tag {
+    font-size: 1rem;
+    color: #b0b8c6;
+    /* Gris claro para el texto secundario */
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.main-title {
+    font-size: 3rem;
+    /* Tamaño grande para el título */
+    font-weight: 800;
+    /* Extra bold */
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #e0e5ee;
+    margin-bottom: 40px;
+}
+
+/* ===================================== */
+/* IMAGEN Y ESTILOS VISUALES */
+/* ===================================== */
+
+.container-image img {
+    width: 100%;
+    height: auto;
+    /* Aplicar el borde redondeado al contenedor si la imagen es el borde */
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    /* Sombra sutil */
+}
+
+/* Para el propósito del diseño, si no estás usando una etiqueta <img> */
+.container-image {
+    /* Asegúrate de que este bloque contenga la imagen real en tu proyecto */
+
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    /* Altura de ejemplo para el contenedor */
+    border-radius: 10px;
+}
+
+
+/* ===================================== */
+/* SECCIÓN DE ESTADÍSTICAS (Stats) */
+/* ===================================== */
+
+.stats-container {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Fondo semitransparente para el recuadro */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 15px 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 150px;
+    height: 120px;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #b0b8c6;
+    line-height: 1.2;
+}
+
+/* ===================================== */
+/* ADAPTACIÓN (Media Queries) */
+/* ===================================== */
+
+@media (max-width: 1024px) {
+    .about-hero {
+        flex-direction: column;
+        /* Apila los elementos en pantallas pequeñas */
+        padding: 60px 5%;
+    }
+
+    .container-text {
+        max-width: 100%;
+        padding-right: 0;
+        margin-bottom: 40px;
+        text-align: center;
+        /* Centra el texto en pantallas pequeñas */
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    /* Centrar elementos de texto */
+    .experience-tag {
+        margin: 0 auto 10px;
+        width: fit-content;
+    }
+
+    .stats-container {
+        justify-content: center;
+    }
+
+    .container-image {
+        height: 350px;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .stats-container {
+        flex-direction: column;
+        /* Apila las estadísticas en móviles */
+    }
+
+    .stat-item {
+        min-width: unset;
+        width: 100%;
+        height: auto;
+    }
+}

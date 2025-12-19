@@ -1,0 +1,126 @@
+/* ===================================== */
+/* ESTRUCTURA GENERAL DE MISIÓN/VISIÓN */
+/* ===================================== */
+
+.mission-vision-section {
+    padding: 60px 5%;
+    background-color: #ffffff;
+    /* Fondo blanco */
+}
+
+.mv-container {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===================================== */
+/* ESTILOS DE TARJETA BASE */
+/* ===================================== */
+
+.mv-card {
+    flex: 1;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    /* Sombra ligera */
+    transition: transform 0.3s ease;
+
+}
+
+.mv-card:hover {
+    transform: translateY(-5px);
+
+}
+
+.mv-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.mv-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+
+}
+
+/* ===================================== */
+/* ESTILOS DE ICONO */
+/* ===================================== */
+
+.mv-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Fondo semitransparente del círculo */
+}
+
+.mv-icon {
+    font-size: 1.4rem;
+}
+
+
+/* ===================================== */
+/* COLORES Y ESTILOS ESPECÍFICOS */
+/* ===================================== */
+
+/* TARJETA DE MISIÓN (Fondo oscuro con degradado) */
+.mission-card {
+    /* Degradado oscuro similar al diseño */
+    background: linear-gradient(135deg, #273043 0%, #3c465a 100%);
+    color: #ffffff;
+}
+
+.mission-card .mv-title {
+    color: #ffffff;
+}
+
+.mission-card .mv-icon-wrapper {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mission-card .mv-icon {
+    color: #ffffff;
+}
+
+
+/* TARJETA DE VISIÓN (Fondo claro con borde) */
+.vision-card {
+    background-color: #ffffff;
+    border: 1px solid #50545d;
+    /* Borde gris claro */
+    color: #273043;
+    /* Texto oscuro */
+}
+
+.vision-card .mv-title {
+    color: #273043;
+}
+
+.vision-card .mv-icon-wrapper {
+    /* El ícono en la visión parece tener un fondo oscuro o coloreado */
+    background-color: #3c465a;
+    border: 1px solid #273043;
+}
+
+.vision-card .mv-icon {
+    color: #ffffff;
+}
+
+/* ===================================== */
+/* ADAPTACIÓN (Media Queries) */
+/* ===================================== */
+
+@media (max-width: 900px) {
+    .mv-container {
+        flex-direction: column;
+    }
+}

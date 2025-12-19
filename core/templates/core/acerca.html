@@ -1,0 +1,226 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!--SECCION HERO-->
+<section class="about-hero">
+    <div class="container-text">
+        <p class="experience-tag">Más de 15 años de experiencia</p>
+        <h1 class="main-title">
+            Transformando la industria mexicana
+        </h1>
+        <p class="description">
+            En Aggregatum somos una empresa mexicana especializada en el desarrollo
+            de software empresarial de clase mundial. Desde 2008, hemos trabajado con
+            las industrias más importantes de México, ofreciendo soluciones tecnológicas
+            innovadoras y confiables.
+        </p>
+        
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Años de experiencia</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100+</span>
+                <span class="stat-label">Proyectos completados</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Clientes satisfechos</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-image">
+        <img src="{% static 'img/about1.jpg' %}" alt="Equipo trabajando en Aggregatum">
+            </div>
+</section>
+
+
+
+<!--SECCION HISTORIA-->
+<section class="history-section">
+    <div class="history-header">
+        <h2 class="history-title">Nuestra historia</h2>
+        <p class="history-subtitle">
+            Un recorrido de más de 15 años construyendo soluciones tecnológicas que impulsan el 
+            crecimiento y la transformación digital de las empresas mexicanas.
+        </p>
+    </div>
+
+    <div class="timeline-container">
+        
+        <div class="timeline-item left">
+            <div class="timeline-card">
+                <h3>Fundación de Aggregatum</h3>
+                <p>Nace Aggregatum con la visión de transformar la industria mexicana mediante soluciones de software empresarial de clase mundial.</p>
+            </div>
+            <div class="timeline-dot">
+                <span class="dot-year">2008</span>
+                <i class="bx bx-rocket timeline-icon"></i> 
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="timeline-dot">
+                <span class="dot-year">2012</span>
+                <i class="bx bx-trending-up timeline-icon"></i> 
+            </div>
+            <div class="timeline-card">
+                <h3>Expansión a múltiples industrias</h3>
+                <p>Consolidamos nuestra presencia en sectores clave: manufactura, minería, hotelería y telecomunicaciones, implementando soluciones ERP y sistemas de tiempo real.</p>
+            </div>
+        </div>
+
+        
+
+        <div class="timeline-item left">
+            <div class="timeline-dot">
+                <span class="dot-year">2018</span>
+                <i class="bx bx-calendar timeline-icon"></i> 
+            </div>
+            <div class="timeline-card">
+                <h3>Líderes en Industria 4.0</h3>
+                <p>Nos posicionamos como referentes en soluciones para Industria 4.0, IoT, RFID y control estadístico de procesos, sirviendo a las principales empresas del país.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="timeline-card">
+                <h3>Certificación ISO 9001:2015</h3>
+                <p>Obtenemos la certificación ISO 9001:2015 en Gestión de Calidad, reafirmando nuestro compromiso con la excelencia en cada proyecto.</p>
+            </div>
+            <div class="timeline-dot">
+                <span class="dot-year">2021</span>
+                <i class="bx bx-medal timeline-icon"></i> 
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<!--MISION Y VISION SECCION-->
+
+<section class="mission-vision-section">
+    <div class="mv-container">
+        
+        <div class="mv-card mission-card">
+            <div class="mv-icon-wrapper">
+                <i class="bx bx-target-lock mv-icon"></i>
+            </div>
+            <h3 class="mv-title">Nuestra misión</h3>
+            <p class="mv-text">
+                La misión de AGGREGATUM es satisfacer las necesidades de nuestros clientes de una forma óptima cuando se trata de desarrollar y desplegar soluciones basadas en telecomunicaciones.
+                Nuestro objetivo es identificar una clara necesidad de nuestros clientes y encontrar una solución ideal para satisfacer esa necesidad. Nosotros proporcionamos esa solución con una actitud de valor agregado, teniendo un acercamiento de ciclo de vida completo (diseño, entrega, apoyo).
+            </p>
+        </div>
+        
+        <div class="mv-card vision-card">
+            <div class="mv-icon-wrapper">
+                <i class="bx bx-show mv-icon"></i>
+            </div>
+            <h3 class="mv-title">Nuestra visión</h3>
+            <p class="mv-text">
+                La visión de AGGREGATUM es mejorar la calidad de vida de nuestros clientes, empleados y de la comunidad con aplicaciones innovadoras y prácticas en telecomunicaciones.
+                Para nuestros clientes, nosotros somos un consejero confiable que les proporciona los beneficios de la tecnología para mejorar sus operaciones. Nosotros mantenemos la mirada constante sobre la evolución de la tecnología para asegurarnos de que las opciones que ofrecemos sean las que más les ofrezcan por su inversión.
+            </p>
+        </div>
+        
+    </div>
+</section>
+
+
+<!--EXPERTISE SECCION-->
+
+
+<section class="expertise-section">
+    <div class="container">
+        <div class="expertise-content">
+            
+            <div class="expertise-media">
+                <img src="{% static 'img/erp.jpg' %}" alt="Gráficos de código en Aggregatum" class="expertise-image">
+            </div>
+            
+            <div class="expertise-text">
+                <h2 class="expertise-title">Nuestra Experiencia</h2>
+                <p class="expertise-subtitle">
+                    Aggregatum es una empresa tecnológica Mexicana con experiencia entregando soluciones integrales o de principio a fin a la industria. 
+                </p>
+                
+                <ul class="feature-list">
+                    <li>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Digitalización y automatización
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Software Industrial (MES/OEE/SPC)
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Sistemas de trazabilidad RFID e IoT
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Integración con ERP, SAP y sistemas de taller Arquitecturas de datos listas para IA
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+<!--VALORES SECCION-->
+<section class="values-section">
+    
+    <div class="values-header">
+        <h2 class="values-title">Nuestros valores</h2>
+        <p class="values-subtitle">
+            Los principios que guían nuestro trabajo y definen nuestra cultura organizacional.
+        </p>
+    </div>
+    
+    <div class="values-grid">
+        
+        <div class="value-item">
+            <i class="bx bx-bulb value-icon"></i>
+            <h4 class="value-name">Innovación</h4>
+            <p class="value-description">
+                Buscamos constantemente nuevas tecnologías y metodologías para ofrecer 
+                soluciones de vanguardia.
+            </p>
+        </div>
+        
+        <div class="value-item">
+            <i class="bx bx-group value-icon"></i>
+            <h4 class="value-name">Profesionalismo</h4>
+            <p class="value-description">
+                Nosotros trabajamos de manera orientada al cliente y al objetivo, con metas
+                en términos de calidad y rentabilidad.
+            </p>
+        </div>
+        
+        <div class="value-item">
+            <i class="bx bx-heart value-icon"></i>
+            <h4 class="value-name">Calidad</h4>
+            <p class="value-description">
+                La excelencia en cada proyecto es nuestra prioridad, respaldada por 
+                certificaciones internacionales.
+            </p>
+        </div>
+        
+        <div class="value-item">
+            <i class="bx bx-bolt-circle value-icon"></i>
+            <h4 class="value-name">Eficiencia y Tenacidad</h4>
+            <p class="value-description">
+                Nosotros perseguimos objetivos a largo plazo y encontramos formas en las cuales
+                los problemas son resueltos para alcanzar nuestras metas. 
+        </div>
+        
+    </div>
+</section>
+{% endblock content %}

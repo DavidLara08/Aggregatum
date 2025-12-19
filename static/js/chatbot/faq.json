@@ -1,0 +1,228 @@
+[
+  {
+    "id": "saludo",
+    "keywords": [
+      "hola",
+      "buenos",
+      "buenas",
+      "buen día",
+      "buenas tardes",
+      "buenas noches",
+      "hey"
+    ],
+    "response": "¡Hola! Soy el asistente virtual de Aggregatum. Estoy aquí para orientarte sobre nuestros servicios y soluciones. ¿Qué te gustaría explorar?",
+    "suggestions": ["Nuestros Servicios", "Contactar", "Proceso", "Industrias"]
+  },
+
+  {
+    "id": "servicios",
+    "keywords": [
+      "servicio",
+      "servicios",
+      "ofrecen",
+      "ofrecemos",
+      "que hacen",
+      "desarrollan",
+      "desarrollo",
+      "nuestros servicios"
+    ],
+    "response": "Somos especialistas en **desarrollo de software a la medida**. Creamos soluciones robustas y escalables para sectores clave. ¿Te interesa conocer las soluciones para alguna industria en particular?",
+    "suggestions": ["Ver Industrias", "Ver Productos"]
+  },
+
+  {
+    "id": "industrias",
+    "keywords": [
+      "ver industrias",
+      "sectores",
+      "clientes",
+      "trabajan",
+      "en que"
+    ],
+    "response": "Trabajamos principalmente en **Manufactura**, **Minería**, **Telecomunicaciones**, **Banca**, **Salud** y **Retail**. ¿Cuál te interesa más?",
+    "suggestions": ["Manufactura", "Minería"]
+  },
+
+  {
+    "id": "productos",
+    "keywords": ["productos", "soluciones", "plataformas", "ver productos"],
+    "response": "Contamos con productos propios listos para implementar, como **SPC** para control de calidad, **MPAT** para localización en minería, y **EZNMS** para monitoreo de redes.",
+    "suggestions": ["SPC (Calidad)", "MPAT (Minería)"]
+  },
+
+  {
+    "id": "proceso",
+    "keywords": [
+      "proceso",
+      "metodologia",
+      "metodología",
+      "etapas",
+      "desarrollo del proyecto",
+      "flujo",
+      "nuestro proceso"
+    ],
+    "response": "Nuestra metodología de desarrollo es ágil y transparente. Incluye: Definición y Análisis, Desarrollo y Pruebas, y Puesta en Producción con Soporte. Así aseguramos la calidad del producto final.",
+    "suggestions": ["Ver Etapas", "Soporte"]
+  },
+
+  {
+    "id": "contacto",
+    "keywords": [
+      "contacto",
+      "hablar",
+      "telefono",
+      "email",
+      "correo",
+      "contactarnos",
+      "contactar"
+    ],
+    "response": "¡Claro! Puedes escribirnos directamente a **recepcion@aggregatum.com** o ir a la sección de Contacto en el sitio web para llenar un formulario.",
+    "suggestions": ["", "Industrias", "Productos"]
+  },
+
+  {
+    "id": "industrias_manufactura",
+    "keywords": ["manufactura", "fabrica", "industria 4.0", "iot", "rfid"],
+    "response": "En **Manufactura**, implementamos soluciones de **Industria 4.0**, plataformas IoT para control de activos y sistemas **SPC** para monitoreo de calidad en tiempo real.",
+    "suggestions": ["SPC", "IoT"]
+  },
+
+  {
+    "id": "industrias_mineria",
+    "keywords": ["mineria", "minas", "materiales", "mpat"],
+    "response": "Para el sector de **Minería**, destacamos con **MPAT**, nuestra plataforma de localización de personal y equipo. Nos enfocamos en la seguridad y el cumplimiento normativo en entornos de alto riesgo.",
+    "suggestions": ["MPAT", "Seguridad"]
+  },
+
+  {
+    "id": "industrias_telecomunicaciones",
+    "keywords": ["telecomunicaciones", "telco", "redes", "comunicacion"],
+    "response": "Proveemos soluciones de gestión de red (como EZNMS) y sistemas de administración de servicios y procesos para alta disponibilidad en el sector de **Telecomunicaciones**.",
+    "suggestions": ["EZNMS", "Alta disponibilidad"]
+  },
+
+  {
+    "id": "industrias_salud",
+    "keywords": ["salud", "hospitales", "sector salud", "medico"],
+    "response": "En **Salud**, desarrollamos software para la gestión de expedientes, administración de recursos y optimización de procesos operativos, siempre respetando la privacidad de los datos.",
+    "suggestions": ["Expedientes digitales", "Seguridad de datos"]
+  },
+
+  {
+    "id": "industrias_banca",
+    "keywords": ["banca", "financiero", "finanzas", "bancos"],
+    "response": "Creamos plataformas y sistemas transaccionales seguros y escalables para el sector **Bancario y Financiero**, enfocados en la experiencia del usuario y el cumplimiento regulatorio."
+  },
+  {
+    "id": "industrias_retail",
+    "keywords": ["retail", "ventas", "comercio", "tiendas"],
+    "response": "Desarrollamos soluciones de comercio electrónico, gestión de inventarios y sistemas de punto de venta (POS) avanzados para el sector **Retail**."
+  },
+
+  {
+    "id": "productos_spc",
+    "keywords": [
+      "spc",
+      "control estadistico",
+      "control estadístico",
+      "statistical process control"
+    ],
+    "response": "**SPC (Control Estadístico de Procesos)** permite capturar y analizar mediciones de variables en tiempo real. Es esencial para detectar variaciones, mejorar la calidad y reducir costos en la producción.",
+    "suggestions": ["Solicitar Demo", "Integración"]
+  },
+
+  {
+    "id": "productos_mpat",
+    "keywords": [
+      "mpat",
+      "localizacion",
+      "localización",
+      "personal",
+      "minas",
+      "rfid"
+    ],
+    "response": "**MPAT** es nuestra plataforma especializada en **localización de personal y equipo** para minería. Utiliza RFID y otras tecnologías robustas para garantizar la seguridad y eficiencia en entornos subterráneos y complejos.",
+    "suggestions": ["Solicitar Demo", "Casos de éxito"]
+  },
+
+  {
+    "id": "productos_eznms",
+    "keywords": [
+      "nms",
+      "eznms",
+      "monitor",
+      "monitoreo de redes",
+      "monitorización"
+    ],
+    "response": "**EZNMS** es una plataforma de **Monitoreo de Redes** diseñada para alta disponibilidad y administración ágil. Su interfaz ligera permite la gestión desde dispositivos móviles.",
+    "suggestions": ["Solicitar Demo", "Soporte"]
+  },
+
+  {
+    "id": "desarrollo_software",
+    "keywords": [
+      "desarrollo",
+      "software",
+      "que es",
+      "definicion",
+      "programacion",
+      "a la medida"
+    ],
+    "response": "El **Desarrollo de Software a la Medida** es nuestro servicio central. Consiste en crear soluciones digitales únicas que se ajustan perfectamente a los procesos y desafíos específicos de tu negocio, garantizando robustez y escalabilidad.",
+    "suggestions": ["Ver Proceso", "Tecnologías que usamos"]
+  },
+
+  {
+    "id": "tecnologias",
+    "keywords": ["tecnologia", "plataforma", "lenguajes"],
+    "response": "Utilizamos un stack tecnológico moderno y robusto. Nuestras principales herramientas son **Python/Django** y **Erlang/OTP** para sistemas críticos. También somos expertos en desarrollos e integraciones con **SAP ABAP/S4 HANA**.",
+    "suggestions": ["Python", "Erlang/OTP", "Abap"]
+  },
+
+  {
+    "id": "tech_python_django",
+    "keywords": ["python", "django", "Python", "Django"],
+    "response": "Elegimos **Python y Django** por su velocidad de desarrollo, seguridad y la capacidad de construir aplicaciones web complejas y escalables en poco tiempo."
+  },
+  {
+    "id": "tech_erlang_otp",
+    "keywords": ["erlang", "otp", "Erlang", "Otp"],
+    "response": "**Erlang/OTP** se utiliza para sistemas que requieren **alta disponibilidad y tolerancia a fallos**, como en Telecomunicaciones y plataformas de mensajería masiva."
+  },
+  {
+    "id": "tech_sap",
+    "keywords": ["sap", "abap", "s4", "hana"],
+    "response": "Nuestra experiencia en **SAP S4/HANA y ABAP** nos permite realizar integraciones profundas y desarrollos a medida que extienden la funcionalidad de tu ERP."
+  },
+
+  {
+    "id": "proceso_etapas",
+    "keywords": ["detalle de etapas", "etapas"],
+    "response": "Las etapas del proyecto son: 1. **Definición Funcional**, 2. **Análisis y Diseño**, 3. **Desarrollo (Iteraciones)**, 4. **Pruebas de Calidad**, y 5. **Puesta en Producción**."
+  },
+  {
+    "id": "proceso_soporte",
+    "keywords": ["soporte", "mantenimiento", "post venta"],
+    "response": "Ofrecemos soporte post-lanzamiento que incluye mantenimiento preventivo, correctivo y evolutivo, asegurando que tu solución se mantenga operativa y relevante a largo plazo."
+  },
+
+  {
+    "id": "seguridad",
+    "keywords": ["seguridad", "seguro"],
+    "response": "La seguridad es una parte clave de nuestras soluciones para empresas. Podemos ayudarte con protección de información, acceso seguro y control interno. ¿Qué aspecto deseas consultar?",
+    "suggestions": ["Erlang", "Otp"]
+  },
+
+  {
+    "id": "solicitar_demo",
+    "keywords": ["solicitar demo", "ver demo", "demo", "prueba"],
+    "response": "Para solicitar una demostración personalizada de cualquiera de nuestros productos, por favor, envíanos un correo a **recepcion@aggregatum.com** con el producto de tu interés."
+  },
+
+  {
+    "id": "default",
+    "keywords": [],
+    "response": "Disculpa, no entendí esa consulta. Puedo guiarte con temas principales. ¿Te gustaría saber sobre **Servicios**, **Productos** o cómo **Contactarnos**?",
+    "suggestions": ["Nuestros Servicios", "Contactar"]
+  }
+]

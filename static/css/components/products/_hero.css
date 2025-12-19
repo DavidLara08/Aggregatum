@@ -1,0 +1,68 @@
+/* static/css/components/products/_hero.css */
+
+.products-hero-section {
+    height: auto;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-dark);
+}
+
+.video-responsive-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.video-responsive-container video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---------------- Desktop: Restaurar el Modo Cover (Fondo) ---------------- */
+
+@media (min-width: 992px) {
+
+    .products-hero-section {
+        height: 90vh;
+        padding: 0;
+        position: relative;
+    }
+
+
+    .products-hero-section .container {
+        max-width: 100%;
+        padding: 0;
+        height: 100%;
+    }
+
+    .video-responsive-container {
+        width: 100%;
+        height: 100%;
+        padding-bottom: 0;
+        max-width: none;
+        border-radius: 0;
+        box-shadow: none;
+        position: relative;
+    }
+
+    .video-responsive-container video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

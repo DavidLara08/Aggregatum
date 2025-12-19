@@ -1,0 +1,165 @@
+/* static/css/layout/_footer.css */
+
+
+.main-footer {
+    background-color: var(--color-primary);
+    color: var(--color-subtle);
+    /* Ajuste para móvil: padding lateral reducido. Se usará este valor por defecto. */
+    padding: var(--spacing-xl) var(--spacing-md);
+    align-items: center;
+
+    margin-top: 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+    /* Cambiado de 'center' a 'start' para nivelar títulos */
+}
+
+
+.footer-description {
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
+}
+
+/* Estilos de las secciones (Base: Móvil) */
+.footer-logo {
+    filter: brightness(0) invert(1);
+    /* Opcional: Úsalo si quieres que los logos se vean blancos */
+}
+
+.footer-section-title,
+.footer-section-title-siguenos {
+    color: var(--color-lightest);
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-md);
+    /* Eliminado padding-left en la base (móvil) para asegurar la alineación a la izquierda */
+}
+
+.footer-links {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    /* Asegura que la lista no tenga padding por defecto */
+}
+
+.footer-links li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-links a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.15s ease-in-out;
+}
+
+.footer-links a:hover {
+    color: var(--color-accent);
+}
+
+.social-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    /* Eliminado padding-left en la base (móvil) */
+}
+
+.social-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    color: var(--color-lightest);
+    background-color: rgba(91, 124, 142, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+}
+
+.social-links a:hover {
+    background-color: var(--color-accent);
+    transform: scale(1.1);
+}
+
+
+.logo-iso {
+    /* Ajustamos el ancho para que sea pequeño y proporcional */
+    max-width: 100px;
+    height: auto;
+
+    /* CENTRADO: Cambiamos display a block y usamos margin auto */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* Espaciado opcional arriba para despegarlo del texto */
+    margin-top: 1rem;
+}
+
+
+.banda-iso {
+    /* Ajustamos el ancho para que sea pequeño y proporcional */
+    max-width: 350px;
+    height: auto;
+
+    /* CENTRADO: Cambiamos display a block y usamos margin auto */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* Espaciado opcional arriba para despegarlo del texto */
+    margin-top: 1rem;
+}
+
+/* Media Query para Desktop (3 columnas) */
+@media (min-width: 768px) {
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+
+
+    /* Restaurar el padding lateral amplio para desktop */
+    .main-footer {
+        padding: var(--spacing-xl) 10rem;
+    }
+
+    /* SOLUCIÓN: Aplicar el padding-left solo en desktop para alinear las columnas */
+    .footer-section-title,
+    .footer-section-title-siguenos {
+        padding-left: 2.5rem;
+        /* Aplicado solo en Desktop */
+    }
+
+    .footer-links {
+        padding-left: 2.5rem;
+        /* Aplicado solo en Desktop para mover los links bajo el título */
+    }
+
+    .social-links {
+        padding-left: 2.5rem;
+        /* Aplicado solo en Desktop */
+    }
+
+    .container-images {
+        justify-content: center;
+        /* Centra las imágenes en móvil */
+    }
+
+}
+
+
+.footer-bottom {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(91, 124, 142, 0.2);
+    font-size: 0.75rem;
+    color: var(--color-secondary);
+}

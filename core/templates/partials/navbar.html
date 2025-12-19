@@ -1,0 +1,71 @@
+{% load static %}
+<nav class="main-nav">
+    <div class="container">
+        <div class="nav-content">
+            
+           <div class="nav-logo-container">
+                <a href="{% url 'home' %}" class="logo-link">
+                    <img src="{% static 'img/logo.png' %}" alt="Aggregatum" class="nav-logo-img">
+                </a>
+            </div>
+
+            
+
+            <div class="nav-links-desktop">
+                <a href="{% url 'fabrica' %}">Fábrica de Software</a>
+                <a href="{% url 'productos' %}">Productos</a>
+                <a href="{% url 'proceso' %}">Proceso</a>
+                <a href="{% url 'contact:form' %}">Contacto</a>
+                <a href="{% url 'acerca' %}">Acerca de </a>
+
+                <!-- Nuevo contenedor -->
+                <div class="lang-wrapper">
+                    <div class="gtranslate_wrapper"></div>
+                </div>
+            </div>
+
+
+            <div class="mobile-menu-toggle">
+                <button id="menu-button" type="button" class="menu-button" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" style="height: 1.5rem; width: 1.5rem;">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="nav-links-mobile" id="mobile-menu">
+        <a href="{% url 'fabrica' %}">Fábrica de Software</a>
+        <a href="{% url 'productos' %}">Productos</a>
+        <a href="{% url 'proceso' %}">Nuestro Proceso</a>
+        <a href="{% url 'contact:form' %}">Contacto</a>
+        <a href="{% url 'acerca' %}">Acerca de nosotros</a>
+    </div>
+</nav>
+
+<script>
+    // Pequeño script para manejar el menú móvil (se mantiene igual)
+    const button = document.getElementById('menu-button');
+    const menu = document.getElementById('mobile-menu');
+
+    button.addEventListener('click', () => {
+        menu.classList.toggle('is-open');
+    });
+</script>
+
+
+
+<script>
+window.gtranslateSettings = {
+    "default_language": "es",       
+    "languages": ["en", "es"],    "wrapper_selector": ".gtranslate_wrapper",
+    "switcher_horizontal_position": "inline",
+    "alt_flags": { 
+        "en": "usa", 
+        "es": "mexico", 
+                            }
+}
+</script>  
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>

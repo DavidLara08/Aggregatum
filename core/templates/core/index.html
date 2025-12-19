@@ -1,0 +1,153 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!--SECCIÓN HERO-->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Desarrollo de Software y Servicios de TI: Aggregatum, México.
+                </h1>
+                <p class="hero-subtitle">
+                    Desarrollamos software de alta calidad que impulsa el crecimiento de tu negocio. Soluciones escalables, seguras y diseñadas para el futuro.
+                </p>
+                <div class="hero-actions">
+                    <a href="{% url 'proceso' %}" class="btn btn-primary">
+                        Nuestro proceso 
+                    </a>
+                    <a href="{% url 'acerca' %}" class="btn btn-secondary">
+                        Conocer más
+                    </a>
+                </div>
+            </div>
+            
+           <div class="hero-image-container">
+                <div class="hero-image-wrapper carousel">
+                    <img src="{% static 'img/index_img.jpg' %}" alt="Equipo trabajando en Aggregatum 1" class="carousel-slide active">
+                    
+                    <img src="{% static 'img/index_img2.jpg' %}" alt="Equipo trabajando en Aggregatum 2" class="carousel-slide">
+                    
+                    <img src="{% static 'img/index_img3.jpg' %}" alt="Equipo trabajando en Aggregatum 3" class="carousel-slide">
+                    
+                    <img src="{% static 'img/index_img4.jpg' %}" alt="Equipo trabajando en Aggregatum 3" class="carousel-slide">
+
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--SERVICIOS-->
+<section class="services-section">
+    <div class="container">
+        <div class="services-header">
+            <h2 class="services-title">Nuestros servicios</h2>
+            <p class="services-subtitle">
+                Ofrecemos soluciones integrales para impulsar la transformación digital de tu empresa.
+            </p>
+        </div>
+
+        <div class="services-grid">
+            
+            <a href="{% url 'fabrica' %}" class="service-card">
+                <div class="service-icon-container">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                </div>
+                <h3>Fábrica de software</h3>
+                <p>Desarrollo de aplicaciones personalizadas con las últimas tecnologías y mejores prácticas de la industria.</p>
+            </a>
+            
+            <a href="{% url 'productos' %}" class="service-card">
+                <div class="service-icon-container">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7v10m-4 4h-4a2 2 0 01-2-2v-4a2 2 0 012-2h4a2 2 0 012 2v4a2 2 0 01-2 2z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h6m-6 4h6m-6 4h6m-4 4h2"></path></svg>
+                </div>
+                <h3>Productos</h3>
+                <p>Soluciones listas para implementar que aceleran la transformación digital de tu empresa.</p>
+            </a>
+            
+            <a href="{% url 'proceso' %}" class="service-card">
+                <div class="service-icon-container">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h2m10 0h2M12 5V3m0 16v2m-4-4l-2 2m8-8l-2 2m-8-8l2-2m8 8l2 2"></path></svg>
+                </div>
+                <h3>Nuestro Proceso</h3>
+                <p>Metodología ágil que garantiza entregas de valor continuas y transparencia total en cada fase.</p>
+            </a>
+            
+            <a href="{% url 'contact:form' %}" class="service-card">
+                <div class="service-icon-container">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 19h2a2 2 0 002-2v-2a2 2 0 00-2-2h-2m-4-2H7m-4 2h4m4 2H7m4 2h4m-4 2h4m-4-6h4m4-2h4m-4 2h4m-4 2h4m-4 2h4"></path></svg>
+                </div>
+                <h3>Contacto</h3>
+                <p>Soporte dedicado y comunicación constante para asegurar el éxito de tu proyecto.</p>
+            </a>
+            
+        </div>
+    </div>
+</section>
+
+
+<!--EXCELENCIA DE CÓDIGO-->
+<section class="excellence-section">
+    <div class="container">
+        <div class="excellence-content">
+            
+            <div class="excellence-media">
+                <img src="{% static 'img/index2_img.jpg' %}" alt="Gráficos de código en Aggregatum" class="excellence-image">
+            </div>
+            
+            <div class="excellence-text">
+                <h2 class="excellence-title">Excelencia en cada línea de código</h2>
+                <p class="excellence-subtitle">
+                    Nos comprometemos a entregar software de la más alta calidad, utilizando las mejores prácticas y tecnologías del mercado para garantizar el éxito de tu proyecto.
+                </p>
+                
+                <ul class="feature-list">
+                    <li>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Desarrollo ágil y transparente
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Código limpio y escalable
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Seguridad de nivel empresarial
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Soporte técnico continuo
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+<section class="cta-section">
+    <div class="container">
+        <h2 class="cta-title">¿Listo para comenzar tu proyecto?</h2>
+        <p class="cta-subtitle">
+            Hablemos sobre cómo podemos ayudarte a transformar tu visión en realidad. Nuestro equipo está listo para impulsar tu negocio.
+        </p>
+ 
+        <div class="cta-actions">
+            <a href="{% url 'contact:form' %}" class="btn-cta-primary">
+                <i class='bx bxs-envelope'></i> Enviar mensaje </a>
+
+            <a href="{% url 'contact:form' %}" class="btn-cta-secondary">
+                <i class='bx bxs-phone'></i> Agendar llamada </a>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock content %}

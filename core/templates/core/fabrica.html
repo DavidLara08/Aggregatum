@@ -1,0 +1,209 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Fábrica de Software | Aggregatum{% endblock title %}
+
+{% block content %}
+
+    <section class="fabrica-hero-section">
+        <div class="container">
+            <div class="fabrica-hero-wrapper">
+                
+                <div class="fabrica-hero-text">
+                    <h1 class="fabrica-hero-title">Fábrica de software</h1>
+                    <p class="fabrica-hero-subtitle">
+                        Una compañía mexicana con más de quince años de experiencia en el desarrollo de software y aplicaciones.
+                    </p>
+                    <p class="fabrica-hero-description">
+                        Desarrollamos soluciones personalizadas que impulsan la transformación
+                        digital de empresas en múltiples industrias, utilizando las tecnologías más
+                        avanzadas y confiables del mercado.
+                    </p>
+                    <a href="{% url 'contact:form' %}" class="btn-cta-primary">
+                        Comenzar un proyecto
+                    </a>
+                </div>
+
+                <div class="fabrica-hero-image">
+                    <img src="{% static 'img/code.jpg' %}" alt="Código de programación" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="specialization-section">
+        <div class="container">
+            <h2 class="section-title">Áreas de especialización</h2>
+            <p class="section-subtitle">
+                Nos especializamos en el desarrollo de aplicaciones para diversas industrias,
+                adaptando nuestras soluciones a las necesidades específicas de cada sector.
+            </p>
+
+            <div class="specialization-grid">
+                <div class="specialization-card">
+                    <div class="card-icon"><i class='bx bxs-cog'></i> </div>
+                    <div class="card-label">Manufactura</div>
+                </div>
+                <div class="specialization-card">
+                    <div class="card-icon"><i class='bx bxs-layer'></i></div>
+                    <div class="card-label">Minería</div>
+                </div>
+                <div class="specialization-card">
+                    <div class="card-icon"><i class='bx bx-hotel'></i></div>
+                    <div class="card-label">Hotelería</div>
+                </div>
+                <div class="specialization-card">
+                    <div class="card-icon"><i class='bx bx-signal-5'></i></div>
+                    <div class="card-label">Telecomunicaciones</div>
+                </div>
+                <div class="specialization-card">
+                    <div class="card-icon"><i class='bx bx-buildings'></i></div>
+                    <div class="card-label">Banca</div>
+                </div>
+                <div class="specialization-card">
+                    <div class="card-icon"><i class='bx bx-plus-medical'></i></div>
+                    <div class="card-label">Organizaciones de Salud</div>
+                </div>
+                <div class="specialization-card">
+                    <div class="card-icon"><i class='bx bx-store-alt'></i></div>
+                    <div class="card-label">Tiendas departamentales</div>
+                </div>
+                <div class="specialization-card">
+                    <div class="card-icon"><i class='bx bx-dots-horizontal-rounded'></i></div>
+                    <div class="card-label">Y más...</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-focus-section">
+        <div class="container">
+            <h2 class="section-title">Aplicaciones ad-hoc</h2>
+            <p class="section-subtitle">
+                Desarrollamos aplicaciones personalizadas utilizando una gran variedad de
+                tecnologías especializadas
+            </p>
+
+            <div class="app-card-grid">
+                <div class="app-card">
+                    <div class="app-card-header">
+                        <div class="app-card-icon"><i class='bx bxs-server'></i></div>
+                        <h3 class="app-card-title">E.R.P. / SAP</h3>
+                    </div>
+                    <ul class="app-card-list">
+                        <li>Contabilidad Financiera</li>
+                        <li>Facturación Electrónica</li>
+                        <li>Contabilidad de Costos</li>
+                        <li>Ventas y Distribución</li>
+                        <li>Administración de Materiales</li>
+                    </ul>
+                </div>
+                <div class="app-card">
+                    <div class="app-card-header">
+                        <div class="app-card-icon"><i class='bx bxs-bolt-circle'></i></div>
+                        <h3 class="app-card-title">Sistemas de tiempo real</h3>
+                    </div>
+                    <ul class="app-card-list">
+                        <li>Procesos ligeros adaptados a multi-núcleo</li>
+                        <li>Alta tolerancia a fallas</li>
+                        <li>Carga activa de código</li>
+                        <li>Soluciones para Telecomunicaciones</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="platforms-section">
+        <div class="container">
+            <div class="platforms-wrapper">
+                
+                <div class="platforms-content">
+                    <h2 class="platforms-title">Plataformas de tecnología probadas</h2>
+                    <p class="platforms-subtitle">
+                        Nuestras soluciones son desarrolladas utilizando plataformas de tecnología
+                        probadas y confiables, garantizando la calidad, escalabilidad y
+                        mantenibilidad de cada proyecto.
+                    </p>
+                    
+                    <div class="platform-cards-list">
+                        <div class="platform-card">
+                            <div class="platform-card-inner">
+                                <div>
+                                    <h4>Python/Django</h4>
+                                    <p>Aplicaciones web robustas</p>
+                                </div>
+                                <div class="platform-card-icon"><i class='bx bx-code-alt'></i></div>
+                            </div>
+                        </div>
+                        <div class="platform-card">
+                            <div class="platform-card-inner">
+                                <div>
+                                    <h4>Erlang OTP</h4>
+                                    <p>Sistemas de alta disponibilidad</p>
+                                </div>
+                                <div class="platform-card-icon"><i class='bx bx-code-alt'></i></div>
+                            </div>
+                        </div>
+                        <div class="platform-card">
+                            <div class="platform-card-inner">
+                                <div>
+                                    <h4>ABAP/R3</h4>
+                                    <p>Desarrollo SAP</p>
+                                </div>
+                                <div class="platform-card-icon"><i class='bx bx-code-alt'></i></div>
+                            </div>
+                        </div>
+                        <div class="platform-card">
+                            <div class="platform-card-inner">
+                                <div>
+                                    <h4>S4/HANA</h4>
+                                    <p>Soluciones SAP modernas</p>
+                                </div>
+                                <div class="platform-card-icon"><i class='bx bx-code-alt'></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="platforms-image">
+                    <img src="{% static 'img/cables.jpg' %}" alt="Cableado de servidores" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="stats-title">Experiencia comprobada</h2>
+            <p class="stats-subtitle">
+                Más de una década desarrollando soluciones que transforman negocios
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class='bx bx-git-commit'></i></div>
+                    <div class="stat-value">+15</div>
+                    <div class="stat-label">Años de experiencia</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class='bx bx-group'></i></div>
+                    <div class="stat-value">50+</div>
+                    <div class="stat-label">Clientes satisfechos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class='bx bx-code-alt'></i></div>
+                    <div class="stat-value">100+</div>
+                    <div class="stat-label">Proyectos completados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class='bx bx-trending-up'></i></div>
+                    <div class="stat-value">8+</div>
+                    <div class="stat-label">Industrias atendidas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

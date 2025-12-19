@@ -1,0 +1,99 @@
+/*static/css/components/_cta.css */
+.cta-section {
+    background: #094c66;
+    background: linear-gradient(90deg, rgba(9, 76, 102, 1) 31%, rgba(38, 135, 85, 1) 89%);
+    /* Fondo sólido azul oscuro */
+    color: var(--color-lightest);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.cta-title {
+    font-size: 2rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-md);
+}
+
+.cta-subtitle {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.7);
+    /* Blanco con 70% de opacidad */
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+}
+
+.cta-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    /* Separación entre botones en columna */
+}
+
+/* Estilos base para los botones */
+.btn-cta-primary,
+.btn-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 28px;
+    /* Ajuste del padding horizontal */
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    justify-content: center;
+}
+
+/* --- Botón Primario (Enviar mensaje) --- */
+.btn-cta-primary {
+    background-color: var(--color-lightest);
+    /* Fondo blanco */
+    color: #172a3a;
+    /* Color de texto/icono azul oscuro */
+    border: 1px solid transparent;
+}
+
+.btn-cta-primary:hover {
+    background-color: var(--color-subtle);
+    transform: translateY(-1px);
+}
+
+/* --- Botón Secundario (Agendar llamada) --- */
+.btn-cta-secondary {
+    background-color: transparent;
+    color: var(--color-lightest);
+    /* Color de texto/icono blanco */
+    border: 1px solid var(--color-lightest);
+    /* Borde blanco sólido */
+}
+
+.btn-cta-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-lightest);
+    transform: translateY(-1px);
+}
+
+/* Estilos para los iconos dentro de los botones */
+.btn-cta-primary i,
+.btn-cta-secondary i {
+    margin-right: 8px;
+    /* Espacio a la derecha del icono */
+    font-size: 1.25rem;
+}
+
+/* ************************************ */
+/* 💻 MEDIA QUERIES (DESKTOP)           */
+/* ************************************ */
+@media (min-width: 640px) {
+    .cta-actions {
+        flex-direction: row;
+        gap: var(--spacing-lg);
+        /* Separación entre botones en fila para desktop */
+    }
+
+    .cta-title {
+        font-size: 2.5rem;
+    }
+}

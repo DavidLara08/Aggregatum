@@ -1,0 +1,269 @@
+/* ---------------- NAVBAR ---------------- */
+
+.main-nav {
+    height: 64px;
+    background-color: var(--color-lightest);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(5px);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+/* ---------------- LOGO ---------------- */
+
+.nav-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 40px;
+}
+
+.logo-icon-box {
+    width: 32px;
+    height: 32px;
+    background-color: #1A2938;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    line-height: 1;
+}
+
+.logo-icon-box span {
+    color: var(--color-lightest);
+    font-weight: var(--font-weight-bold);
+    font-size: 1.25rem;
+}
+
+.nav-logo {
+    color: #1A2938;
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-bold);
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+}
+
+.nav-logo:hover {
+    color: var(--color-accent);
+}
+
+/* ---------------- ENLACES DESKTOP (MODIFICADO PARA ANIMACIÓN) ---------------- */
+
+.nav-links-desktop {
+    display: none;
+    gap: 1.25rem;
+    margin-left: auto;
+}
+
+.nav-links-desktop a {
+    color: #1A2938;
+    /* Ajustamos el padding-bottom para dejar espacio a la línea */
+    padding: 10px 12px 14px 12px;
+    font-size: 1rem;
+    text-decoration: none;
+    position: relative;
+    /* CLAVE: Contenedor para el pseudo-elemento */
+    transition: color 0.15s ease-in-out;
+}
+
+/* 1. Estilo y posición inicial de la línea (colapsada en el centro) */
+.nav-links-desktop a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    /* Distancia desde el borde inferior del enlace */
+    left: 50%;
+    /* CLAVE: Punto de inicio en el centro (50%) */
+
+    /* La línea empieza invisible (0% de ancho) */
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    /* Color de la línea */
+
+    /* Definimos la transición para la animación */
+    transition: width 0.3s ease-out, left 0.3s ease-out;
+}
+
+.nav-links-desktop a:hover {
+    color: var(--color-primary);
+    /* Cambia el color del texto */
+}
+
+/* 2. Efecto HOVER: Expande la línea (Del centro a los lados) */
+.nav-links-desktop a:hover::after {
+    width: 100%;
+    /* La línea crece a su ancho completo */
+    left: 0;
+    /* CLAVE: Mueve el punto de inicio al 0% */
+}
+
+/* ---------------- MENU MOBILE ---------------- */
+
+.menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    color: #1A2938;
+}
+
+.nav-links-mobile {
+    /* Eliminamos display: none para usar max-height */
+    border-top: 1px solid rgba(26, 41, 56, 0.1);
+    padding: 0 0 0 0;
+    /* Inicialmente 0 padding vertical */
+    background-color: var(--color-subtle);
+
+    /* CLAVE para el efecto de deslizamiento: 
+       Comienza colapsado (0px) y la transición se aplica a max-height */
+    max-height: 0;
+    overflow: hidden;
+
+    /* La transición debe ser lenta para que parezca sutil */
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+    /* Lo hacemos invisible al inicio */
+}
+
+.nav-links-mobile.is-open {
+    /* CLAVE para el efecto de deslizamiento: 
+       Debe ser un valor lo suficientemente grande para contener todo el menú */
+    max-height: 500px;
+    /* Asegura que el contenido quepa, ajusta si es necesario */
+    opacity: 1;
+    /* Lo hacemos visible */
+
+    /* Restauramos el padding vertical y el margen inferior del contenedor */
+    padding: 8px 0 12px 0;
+}
+
+.nav-links-mobile a {
+    /* Estilo base de los enlaces (se mantienen) */
+    display: block;
+    color: var(--color-primary);
+    font-size: 1.125rem;
+    font-weight: 500;
+    padding: 12px 16px;
+    margin: 4px 8px;
+    border-radius: 6px;
+    text-decoration: none;
+
+    /* Preparamos el desplazamiento y el fade-in individual (de la solución anterior) */
+    opacity: 0;
+    transform: translateX(-15px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+/* ---------------- ANIMACIÓN DE ENTRADA ESCALONADA (Staggered Fade-in) ---------------- */
+
+/* NOTA: Para que el fade-in escalonado funcione, la opacidad de los 'a' debe
+   empezar a cambiar DESPUÉS de que el contenedor principal esté abierto. */
+
+.nav-links-mobile.is-open a {
+    /* Al abrir el menú, los enlaces se hacen visibles */
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Aplicar un retraso (delay) individual a cada enlace */
+
+.nav-links-mobile.is-open a:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.nav-links-mobile.is-open a:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.nav-links-mobile.is-open a:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.nav-links-mobile.is-open a:nth-child(4) {
+    transition-delay: 0.25s;
+}
+
+.nav-links-mobile.is-open a:nth-child(5) {
+    transition-delay: 0.3s;
+}
+
+/* ... Asegúrate de ajustar los retrasos si usas más enlaces ... */
+
+.nav-links-mobile a:hover {
+    background-color: rgba(26, 41, 56, 0.08);
+    color: var(--color-accent);
+}
+
+/* ---------------- RESPONSIVE (Mantiene tus reglas) ---------------- */
+
+@media (min-width: 768px) {
+
+    /* CLAVE: Si ya no se usa display: none, debemos asegurar que el menú esté completamente oculto en desktop */
+    .nav-links-mobile {
+        display: none !important;
+        /* Forzar ocultar si la navbar está abierta pero en tamaño desktop */
+    }
+}
+
+
+
+/* ---------------- FIX GOOGLE TRANSLATE ORIGINAL ---------------- */
+
+
+.lang-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 15px;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (min-width: 768px) {
+    .nav-links-desktop {
+        display: flex;
+    }
+
+    .menu-button {
+        display: none;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .lang-wrapper {
+        position: fixed !important;
+        bottom: 25px !important;
+        /* Ajusta para que esté a la misma altura que el chatbot */
+        right: 20px !important;
+        /* Lado derecho */
+        left: auto !important;
+        z-index: 9999;
+
+        /* Estilo tipo burbuja para que combine con el chatbot */
+        background: white;
+        padding: 8px;
+        border-radius: 50px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Ajuste por si el widget genera un select muy ancho */
+    .lang-wrapper select {
+        max-width: 100px;
+        border: none;
+        background: transparent;
+        font-family: inherit;
+    }
+}

@@ -1,0 +1,90 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+     <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>{% block title %}Aggregatum{% endblock title %}</title>
+
+        <link rel="icon" type="image/png" href="{% static 'img/logo-small.png' %}">
+
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=TU_CLAVE_API&callback=initMap"></script>
+
+        
+
+         {% block extra_css %}{% endblock extra_css %}
+</head>
+
+<body class="font-sans antialiased">
+    
+    {% include 'partials/navbar.html' %}
+
+    <main id="content" class="min-h-screen">
+         {% block content %}{% endblock content %}
+    </main>
+    
+    {% include 'partials/footer.html' %}
+
+    {% include 'partials/chatbot.html'%}
+
+     <script src="{% static 'js/chatbot/chatbot.js' %}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="{% static 'js/carousel.js' %}"></script>
+    
+        {% block extra_js %}
+    <script>
+     // 1. Verificar si hay mensajes de Django para mostrar
+     {% if messages %}
+         {% for message in messages %}
+             // 2. Determinar el tipo de icono basado en el tag (success, error, warning)
+                var iconType = '';
+                var titleText = '';
+                var messageText = '{{ message|escapejs }}'; // Usar escapejs para manejar comillas en el mensaje
+
+                {% if message.tags == 'success' %}
+                    iconType = 'success';
+                    titleText = '¡Mensaje Enviado!';
+                    {% elif message.tags == 'error' or message.tags == 'debug' %}
+                    iconType = 'error';
+                    titleText = 'Error de Envío';
+                    {% elif message.tags == 'warning' %}
+                    iconType = 'warning';
+                    titleText = 'Advertencia';
+                    {% else %}
+                    iconType = 'info';
+                    titleText = 'Información';
+                    {% endif %}
+
+                    // 3. Mostrar la alerta de SweetAlert2
+                    Swal.fire({
+                    icon: iconType,
+                    title: titleText,
+                    text: messageText, // Usamos la variable con escape
+                    confirmButtonText: 'Aceptar',
+                    
+                    customClass: {
+                    container: 'ag-swal-container',
+                    popup: 'ag-swal-popup',
+                    confirmButton: 'ag-swal-button'
+                     }
+                 });
+            {% endfor %}
+        {% endif %}
+     </script>
+    {% endblock extra_js %}
+
+
+  
+</body>
+</html>

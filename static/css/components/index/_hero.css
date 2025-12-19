@@ -1,0 +1,183 @@
+/* static/css/components/_hero.css */
+
+.hero-section {
+    /* Degradado de fondo */
+    background: linear-gradient(90deg, rgba(9, 76, 102, 1) 31%, rgba(38, 135, 85, 1) 89%);
+    color: var(--color-lightest);
+    padding: 110px 0;
+    overflow: hidden;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-text {
+    margin-bottom: 3rem;
+}
+
+.hero-title {
+    font-size: 2.25rem;
+    line-height: 1.2;
+    font-weight: 800;
+    margin-bottom: var(--spacing-md);
+}
+
+.hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-subtle);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-xl);
+}
+
+.hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    justify-content: center;
+}
+
+/* --- Contenedor de la Imagen (Móvil) --- */
+.hero-image-container {
+    display: none;
+    /* Oculto por defecto en móvil */
+    width: 100%;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    padding-top: 70%;
+    /* Ratio de aspecto para la imagen */
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+.hero-image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+/* ************************************ */
+/* 💻 MEDIA QUERIES (DESKTOP)           */
+/* ************************************ */
+
+/* Reglas para pantallas > 640px (sm) */
+@media (min-width: 640px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-actions {
+        flex-direction: row;
+        gap: var(--spacing-sm);
+    }
+}
+
+
+/* --- Estilos para el Carrusel de Imágenes --- */
+
+/* Asegura que el contenedor sea el contexto para los elementos posicionados absolutamente */
+.hero-image-wrapper.carousel {
+    position: relative;
+    padding-top: 40%;
+    /* relación ideal similar a tu primera imagen */
+    height: auto;
+}
+
+
+/* El resto de las propiedades de .carousel-slide son correctas para el fade-in/out */
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    /* ... (resto de las propiedades) ... */
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+/* Esta clase es la clave, asegura que la primera imagen sea visible */
+.carousel-slide.active {
+    opacity: 1;
+}
+
+/* --- Efecto HOVER para el Contenedor de la Imagen (Opcional) --- */
+.hero-image-wrapper {
+    /* Agrega una transición para el efecto hover */
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    cursor: pointer;
+}
+
+.hero-image-wrapper:hover {
+    /* Ligero escalado al pasar el mouse */
+    transform: scale(1.02);
+    /* Sombra más prominente al pasar el mouse */
+    box-shadow: 0 30px 40px -8px rgba(0, 0, 0, 0.6);
+}
+
+/* Asegurarse de que el efecto hover solo esté activo en desktop */
+@media (max-width: 1023px) {
+    .hero-image-wrapper:hover {
+        transform: none;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+        /* Sombra original */
+    }
+}
+
+/* Ajuste para que la imagen dentro del wrapper se beneficie de la transición */
+.hero-image-wrapper img {
+    /* Añade la transición aquí también para que el hover sea más suave en la imagen */
+    transition: transform 0.3s ease-out;
+}
+
+
+
+
+
+
+/* Reglas para pantallas > 1024px (lg) */
+@media (min-width: 1024px) {
+
+    /* Layout */
+    .hero-content {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+    }
+
+    /* Texto */
+    .hero-text {
+        width: 50%;
+        margin-bottom: 0;
+    }
+
+    /* Título */
+    .hero-title {
+        font-size: 3.75rem;
+    }
+
+    .hero-actions {
+        justify-content: flex-start;
+    }
+
+    /* Imagen */
+    .hero-image-container {
+        display: block;
+        /* Mostrar imagen */
+        width: 50%;
+        padding-left: 2rem;
+    }
+}

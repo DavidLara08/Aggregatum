@@ -1,0 +1,57 @@
+/* static/css/base/_variables.css */
+
+:root {
+    /* Colores base */
+    --color-primary: #1A2938;
+    /* Azul muy oscuro (Fondo/Footer) */
+    --color-secondary: #5B7C8E;
+    /* Azul-gris intermedio */
+    --color-accent: #26547C;
+    /* Azul de acento */
+    --color-darkest: #101C25;
+    /* Fondo oscuro profundo */
+    --color-lightest: #FFFFFF;
+    /* Blanco */
+    --color-subtle: #E0E7EB;
+    /* Gris claro (Fondo de Navbar) */
+    --color-green-cta: #10B981;
+    /* Verde para el botón CTA */
+
+    /* Degradados */
+    --gradient-start: #254E69;
+    --gradient-end: #1A2E3D;
+
+    /* Tipografía */
+    --font-sans: 'Inter', sans-serif;
+    --font-weight-bold: 600;
+
+    /* Spacing y Layout */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 48px;
+
+    /* Breakpoints (Usaremos media queries en los archivos de layout/componentes) */
+    --breakpoint-md: 768px;
+    /* Tablet */
+    --breakpoint-lg: 1024px;
+    /* Desktop */
+}
+
+/* Estilos globales básicos */
+body {
+    font-family: var(--font-sans);
+    color: var(--color-darkest);
+    background-color: var(--color-lightest);
+}
+
+/* Contenedor central */
+.container {
+    max-width: 1280px;
+    /* Ancho máximo similar a un container de Tailwind */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+}

@@ -1,0 +1,97 @@
+/* static/css/components/software/_techfocus.css */
+
+.tech-focus-section {
+    background-color: #e5e5e6;
+    ;
+    /* Fondo gris claro */
+    padding: 30px 0;
+    text-align: center;
+}
+
+.tech-focus-section .section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.tech-focus-section .section-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text);
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.app-card-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .app-card-grid {
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    .tech-focus-section {
+        padding: 60px 0;
+    }
+}
+
+.app-card {
+    flex: 1;
+    background-color: var(--color-lightest);
+    /* Fondo blanco */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.app-card:hover {
+    transform: translateY(-5px);
+}
+
+.app-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.app-card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-primary);
+    color: var(--color-lightest);
+    border-radius: 8px;
+    font-size: 2rem;
+    margin-right: 15px;
+}
+
+.app-card-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    line-height: 1.2;
+}
+
+.app-card-list {
+    list-style: disc;
+    /* Usamos puntos para la lista */
+    padding-left: 20px;
+    margin-top: 15px;
+    font-size: 1rem;
+    color: var(--color-text);
+}
+
+.app-card-list li {
+    margin-bottom: 8px;
+    font-weight: 400;
+}
