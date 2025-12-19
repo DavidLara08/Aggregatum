@@ -1,15 +1,24 @@
 import os
-import certifi
-import ssl
+
 from dotenv import load_dotenv
 from pathlib import Path
 
+
+import ssl
+
+# Workaround SSL SOLO para entorno local (Windows / Python 3.13)
+if os.environ.get('DEBUG', 'False') == 'True':
+    try:
+        import certifi
+        ssl._create_default_https_context = lambda *args, **kwargs: ssl.create_default_context(
+            cafile=certifi.where()
+        )
+    except ImportError:
+        pass
+
+
+
 load_dotenv()
-
-ssl._create_default_https_context = lambda *args, **kwargs: ssl.create_default_context(
-    cafile=certifi.where()
-)
-
 # Build paths
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -128,22 +137,3 @@ else:
 
 
 
-# ----------------------------
-# CONFIGURACIÓN DE CORREO SMTP
-# ----------------------------
-
-#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-#EMAIL_HOST = 'smtp.gmail.com' 
-#EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 465))
-
-#if EMAIL_PORT == 465:
-#    EMAIL_USE_SSL = True
-#    EMAIL_USE_TLS = False
-#else:
-#    EMAIL_USE_SSL = False
-#    EMAIL_USE_TLS = True
-
-#EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-#EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-#DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-#EMAIL_RECEIVER = os.environ.get('EMAIL_RECEIVER', EMAIL_HOST_USER)
