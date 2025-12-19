@@ -1,8 +1,14 @@
 import os
+import certifi
+import ssl
 from dotenv import load_dotenv
 from pathlib import Path
 
 load_dotenv()
+
+ssl._create_default_https_context = lambda *args, **kwargs: ssl.create_default_context(
+    cafile=certifi.where()
+)
 
 # Build paths
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -84,24 +90,22 @@ LANGUAGES = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # ----------------------------
-# CONFIGURACIÓN DE CORREO SMTP
+# CONFIGURACIÓN DE CORREO SENDGRID
 # ----------------------------
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com' 
-EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 465))
+SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
 
-if EMAIL_PORT == 465:
-    EMAIL_USE_SSL = True
-    EMAIL_USE_TLS = False
-else:
-    EMAIL_USE_SSL = False
-    EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = os.environ.get(
+    'DEFAULT_FROM_EMAIL',
+    'alexlara0956@gmail.com'  # fallback local
+)
 
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-EMAIL_RECEIVER = os.environ.get('EMAIL_RECEIVER', EMAIL_HOST_USER)
+EMAIL_RECEIVER = os.environ.get(
+    'EMAIL_RECEIVER',
+    'alexlara0956@gmail.com'  # fallback local
+)
+
+
 
 # ----------------------------
 # ARCHIVOS ESTÁTICOS
@@ -121,3 +125,25 @@ if not DEBUG:
 else:
     # En desarrollo usamos el almacenamiento estándar
     STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+
+
+
+# ----------------------------
+# CONFIGURACIÓN DE CORREO SMTP
+# ----------------------------
+
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_HOST = 'smtp.gmail.com' 
+#EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 465))
+
+#if EMAIL_PORT == 465:
+#    EMAIL_USE_SSL = True
+#    EMAIL_USE_TLS = False
+#else:
+#    EMAIL_USE_SSL = False
+#    EMAIL_USE_TLS = True
+
+#EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+#EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+#DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+#EMAIL_RECEIVER = os.environ.get('EMAIL_RECEIVER', EMAIL_HOST_USER)
